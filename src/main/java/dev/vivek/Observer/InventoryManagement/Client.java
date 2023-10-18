@@ -1,15 +1,12 @@
-package dev.vivek.Observer;
+package dev.vivek.Observer.InventoryManagement;
 
 public class Client {
     public static void main(String[] args) {
         Publisher publisher = new Publisher();
-        InventoryManagement inventoryManagement = new InventoryManagement();
-        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
-        NotifySeller notifySeller = new NotifySeller();
+        InventoryManagement inventoryManagement = new InventoryManagement(publisher);
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator(publisher);
+        NotifySeller notifySeller = new NotifySeller(publisher);
 
-        publisher.registerPlacedOrderSubscriber(inventoryManagement);
-        publisher.registerPlacedOrderSubscriber(invoiceGenerator);
-        publisher.registerPlacedOrderSubscriber(notifySeller);
 
         publisher.orderPlaced();
 

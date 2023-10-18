@@ -1,4 +1,4 @@
-package dev.vivek.Observer;
+package dev.vivek.Observer.InventoryManagement;
 
 import java.util.ArrayList;
 import java.util.List;
